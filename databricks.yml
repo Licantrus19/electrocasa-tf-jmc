@@ -25,6 +25,12 @@ variables:
 
   schema_resenas:
     description: Ruta para el schema de Auto Loader de resenas
+  
+  ruta_devoluciones:
+    description: Ruta de archivos de devoluciones
+
+  schema_devoluciones:
+    description: Ruta para el schema de Auto Loader de devoluciones
 
 targets:
   dev:
@@ -38,6 +44,8 @@ targets:
       schema_empleados: /Volumes/electrocasa_dev/bronze/landing/schemas/empleados
       ruta_resenas: /Volumes/electrocasa_dev/bronze/landing/resenas
       schema_resenas: /Volumes/electrocasa_dev/bronze/landing/schemas/resenas
+      ruta_devoluciones: /Volumes/electrocasa_dev/bronze/landing/devoluciones
+      schema_devoluciones: /Volumes/electrocasa_dev/bronze/landing/schemas/devoluciones
 
   prod:
     mode: production
@@ -49,3 +57,7 @@ targets:
       schema_empleados: /Volumes/electrocasa_prod/bronze/landing/schemas/empleados
       ruta_resenas: /Volumes/electrocasa_prod/bronze/landing/resenas
       schema_resenas: /Volumes/electrocasa_prod/bronze/landing/schemas/resenas
+      ruta_devoluciones: /Volumes/electrocasa_prod/bronze/landing/devoluciones
+      schema_devoluciones: /Volumes/electrocasa_prod/bronze/landing/schemas/devoluciones
+
+

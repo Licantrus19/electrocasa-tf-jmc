@@ -20,3 +20,5 @@ resources:
         schema_empleados: ${var.schema_empleados}
         ruta_resenas: ${var.ruta_resenas}
         schema_resenas: ${var.schema_resenas}
+        ruta_devoluciones: ${var.ruta_devoluciones}
+        schema_devoluciones: ${var.schema_devoluciones}
