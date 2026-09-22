@@ -16,3 +16,5 @@ resources:
         catalogo: ${var.catalogo}
         ruta_ventas: ${var.ruta_ventas}
         schema_ventas: ${var.schema_ventas}
+        ruta_empleados: ${var.ruta_empleados}
+        schema_empleados: ${var.schema_empleados}
