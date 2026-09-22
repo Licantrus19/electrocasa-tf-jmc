@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    electrocasa_pipeline:
+      name: electrocasa_pipeline
+
+      catalog: ${var.catalogo}
+      schema: bronze
+
+      serverless: true
+
+      libraries:
+        - glob:
+            include: ../src/electrocasa/transformations/**
+
+      configuration:
+        catalogo: ${var.catalogo}
+        ruta_ventas: ${var.ruta_ventas}
+        schema_ventas: ${var.schema_ventas}

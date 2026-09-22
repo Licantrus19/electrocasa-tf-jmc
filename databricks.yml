@@ -1,0 +1,31 @@
+bundle:
+  name: electrocasa
+
+include:
+  - resources/electrocasa_pipeline.yml
+
+variables:
+  catalogo:
+    description: Catalogo de Unity Catalog
+
+  ruta_ventas:
+    description: Ruta de archivos de ventas
+
+  schema_ventas:
+    description: Ruta para el schema de Auto Loader
+
+targets:
+  dev:
+    mode: development
+    default: true
+    variables:
+      catalogo: electrocasa_dev
+      ruta_ventas: /Volumes/electrocasa_dev/bronze/landing/ventas
+      schema_ventas: /Volumes/electrocasa_dev/bronze/landing/schemas/ventas
+
+  prod:
+    mode: production
+    variables:
+      catalogo: electrocasa_prod
+      ruta_ventas: /Volumes/electrocasa_prod/bronze/landing/ventas
+      schema_ventas: /Volumes/electrocasa_prod/bronze/landing/schemas/ventas
