@@ -18,3 +18,5 @@ resources:
         schema_ventas: ${var.schema_ventas}
         ruta_empleados: ${var.ruta_empleados}
         schema_empleados: ${var.schema_empleados}
+        ruta_resenas: ${var.ruta_resenas}
+        schema_resenas: ${var.schema_resenas}

@@ -20,6 +20,12 @@ variables:
   schema_empleados:
     description: Ruta para el schema de Auto Loader de empleados
 
+  ruta_resenas:
+    description: Ruta de archivos de resenas
+
+  schema_resenas:
+    description: Ruta para el schema de Auto Loader de resenas
+
 targets:
   dev:
     mode: development
@@ -30,6 +36,8 @@ targets:
       schema_ventas: /Volumes/electrocasa_dev/bronze/landing/schemas/ventas
       ruta_empleados: /Volumes/electrocasa_dev/bronze/landing/empleados
       schema_empleados: /Volumes/electrocasa_dev/bronze/landing/schemas/empleados
+      ruta_resenas: /Volumes/electrocasa_dev/bronze/landing/resenas
+      schema_resenas: /Volumes/electrocasa_dev/bronze/landing/schemas/resenas
 
   prod:
     mode: production
@@ -39,3 +47,5 @@ targets:
       schema_ventas: /Volumes/electrocasa_prod/bronze/landing/schemas/ventas
       ruta_empleados: /Volumes/electrocasa_prod/bronze/landing/empleados
       schema_empleados: /Volumes/electrocasa_prod/bronze/landing/schemas/empleados
+      ruta_resenas: /Volumes/electrocasa_prod/bronze/landing/resenas
+      schema_resenas: /Volumes/electrocasa_prod/bronze/landing/schemas/resenas
