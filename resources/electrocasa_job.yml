@@ -16,6 +16,8 @@ resources:
         - task_key: ingesta_productos
           notebook_task:
             notebook_path: ../notebooks/03_ingesta_productos.ipynb
+            base_parameters:
+              catalogo: ${var.catalogo}
           max_retries: 2
           min_retry_interval_millis: 60000
 
