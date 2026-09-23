@@ -21,7 +21,7 @@ resources:
 
         - task_key: ingesta_tracking
           notebook_task:
-            notebook_path: ../notebooks/01_ingesta_tracking
+            notebook_path: ../notebooks/01_ingesta_tracking.ipynb
             base_parameters:
               catalogo: ${var.catalogo}
           max_retries: 2
@@ -30,6 +30,7 @@ resources:
         - task_key: ejecutar_pipeline
           depends_on:
             - task_key: ingesta_productos
+            - task_key: ingesta_tracking
           pipeline_task:
             pipeline_id: ${resources.pipelines.electrocasa_pipeline.id}
             full_refresh: false
