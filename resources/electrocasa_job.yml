@@ -6,8 +6,12 @@ resources:
       schedule:
         quartz_cron_expression: "0 0 8 * * ?"
         timezone_id: "America/Lima"
-        pause_status: UNPAUSED
-
+        pause_status: PAUSED
+      email_notifications:
+        on_success:
+          - jeffersonmerino19@gmail.com
+        on_failure:
+          - jeffersonmerino19@gmail.com
       tasks:
         - task_key: ingesta_productos
           notebook_task:
