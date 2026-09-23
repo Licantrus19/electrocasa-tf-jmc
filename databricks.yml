@@ -3,6 +3,7 @@ bundle:
 
 include:
   - resources/electrocasa_pipeline.yml
+  - resources/electrocasa_job.yml
 
 variables:
   catalogo:
