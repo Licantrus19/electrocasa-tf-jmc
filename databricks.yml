@@ -1,0 +1,68 @@
+bundle:
+  name: electrocasa
+
+include:
+  - resources/electrocasa_pipeline.yml
+  - resources/electrocasa_job.yml
+
+variables:
+  catalogo:
+    description: Catalogo de Unity Catalog
+
+  ruta_ventas:
+    description: Ruta de archivos de ventas
+
+  schema_ventas:
+    description: Ruta para el schema de Auto Loader
+
+  ruta_empleados:
+    description: Ruta de archivos de empleados
+
+  schema_empleados:
+    description: Ruta para el schema de Auto Loader de empleados
+
+  ruta_resenas:
+    description: Ruta de archivos de resenas
+
+  schema_resenas:
+    description: Ruta para el schema de Auto Loader de resenas
+  
+  ruta_devoluciones:
+    description: Ruta de archivos de devoluciones
+
+  schema_devoluciones:
+    description: Ruta para el schema de Auto Loader de devoluciones
+
+targets:
+  dev:
+    mode: development
+    default: true
+    variables:
+      catalogo: electrocasa_dev
+      ruta_ventas: /Volumes/electrocasa_dev/bronze/landing/ventas
+      schema_ventas: /Volumes/electrocasa_dev/bronze/landing/schemas/ventas
+      ruta_empleados: /Volumes/electrocasa_dev/bronze/landing/empleados
+      schema_empleados: /Volumes/electrocasa_dev/bronze/landing/schemas/empleados
+      ruta_resenas: /Volumes/electrocasa_dev/bronze/landing/resenas
+      schema_resenas: /Volumes/electrocasa_dev/bronze/landing/schemas/resenas
+      ruta_devoluciones: /Volumes/electrocasa_dev/bronze/landing/devoluciones
+      schema_devoluciones: /Volumes/electrocasa_dev/bronze/landing/schemas/devoluciones
+
+  prod:
+    mode: production
+
+    workspace:
+      root_path: /Workspace/Users/admin_access_jm@rolandmerinochavezcloudoutl.onmicrosoft.com/.bundle/${bundle.name}/${bundle.target}
+
+    variables:
+      catalogo: electrocasa_prod
+      ruta_ventas: /Volumes/electrocasa_prod/bronze/landing/ventas
+      schema_ventas: /Volumes/electrocasa_prod/bronze/landing/schemas/ventas
+      ruta_empleados: /Volumes/electrocasa_prod/bronze/landing/empleados
+      schema_empleados: /Volumes/electrocasa_prod/bronze/landing/schemas/empleados
+      ruta_resenas: /Volumes/electrocasa_prod/bronze/landing/resenas
+      schema_resenas: /Volumes/electrocasa_prod/bronze/landing/schemas/resenas
+      ruta_devoluciones: /Volumes/electrocasa_prod/bronze/landing/devoluciones
+      schema_devoluciones: /Volumes/electrocasa_prod/bronze/landing/schemas/devoluciones
+
+

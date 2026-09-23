@@ -1,0 +1,40 @@
+resources:
+  jobs:
+    electrocasa_job:
+      name: electrocasa_job
+      
+      schedule:
+        quartz_cron_expression: "0 0 8 * * ?"
+        timezone_id: "America/Lima"
+        pause_status: PAUSED
+      email_notifications:
+        on_success:
+          - jeffersonmerino19@gmail.com
+        on_failure:
+          - jeffersonmerino19@gmail.com
+      tasks:
+        - task_key: ingesta_productos
+          notebook_task:
+            notebook_path: ../notebooks/03_ingesta_productos.ipynb
+            base_parameters:
+              catalogo: ${var.catalogo}
+          max_retries: 2
+          min_retry_interval_millis: 60000
+
+        - task_key: ingesta_tracking
+          notebook_task:
+            notebook_path: ../notebooks/01_ingesta_tracking.ipynb
+            base_parameters:
+              catalogo: ${var.catalogo}
+          max_retries: 2
+          min_retry_interval_millis: 60000
+
+        - task_key: ejecutar_pipeline
+          depends_on:
+            - task_key: ingesta_productos
+            - task_key: ingesta_tracking
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.electrocasa_pipeline.id}
+            full_refresh: false
+          max_retries: 2
+          min_retry_interval_millis: 60000
