@@ -19,6 +19,14 @@ resources:
           max_retries: 2
           min_retry_interval_millis: 60000
 
+        - task_key: ingesta_tracking
+          notebook_task:
+            notebook_path: ../notebooks/01_ingesta_tracking
+            base_parameters:
+              catalogo: ${var.catalogo}
+          max_retries: 2
+          min_retry_interval_millis: 60000
+
         - task_key: ejecutar_pipeline
           depends_on:
             - task_key: ingesta_productos
